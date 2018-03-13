@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta name="referrer" content="origin">
+<script>
+	var counter = 0;
+    var limit = 50;
+
+    function addInput(divName, arrName){
+         if (counter == limit)  {
+              alert("You have reached the limit of adding " + counter + " inputs");
+         }
+         else {
+              var newdiv = document.createElement('div');
+              newdiv.innerHTML = "<input type='text' name='" + arrName + "[]' required autofocus>";
+              document.getElementById(divName).appendChild(newdiv);
+              counter++;
+         }
+    }
+	
+</script>
+
+<style>
+	html *
+	{
+		color: #000 !important;
+		font-family: Arial !important;
+	}
+	
+ .wrapper
+    {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      overflow:auto;
+
+    }
+
+    .window
+    {
+      width: 100%;
+      min-height: 200px;
+      display: flex;
+	  flex-direction: column-reverse;
+	  float: none;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .windowContent
+    {
+
+    }
+	
+	.generatedEmotion
+	{
+     font-weight: bold;
+	 background-color: #f9f99f;
+	font-size:2.4em
+	 }
+
+input[type=text], select {
+    width: 150%;
+    padding: 6px 10px;
+    margin: 4px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 80%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=button]{
+	width: 50%;
+    background-color: #9CAFFF;
+    color: white;
+    padding: 6px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 0px;
+	float: left;
+    width: 75%;
+    margin: 5px;
+	margin-left: 0.5cm;
+}
+
+.floating-box {
+    float: left;
+    width: 100%;
+    margin: 5px;
+	margin-left: 0.5cm;
+    border: 3px solid #73AD21;  
+    border-radius: 4px;
+}
+
+
+</style>
+</head>
+
+<body onload="GenerateEmotion()">
+<div class="wrapper">
+    <div class="window">
+		<div class="windowContent">
+			<form action="part2.html" align="center" method="GET">
+					<div id = "dynamicInputHolder_1">
+					 <b>Emotion </b><input type="text" value="" name="emotion" id="emotion" class="generatedEmotion" readonly>
+					 <div id="dynamicInput_1">
+							<textarea rows="4" cols="50" readonly class="floating-box">
+John arrived at Sally's house to pick her up. John and Sally were going to a fancy restaurant that evening for a dinner. John was little nervous because he was going to ask Sally to marry him.</textarea>
+					 </div>
+					 <input type="button" value="Add connecting sentences" onClick="addInput('dynamicInput_1', 'myInputs_1');">
+					 </div>
+					 
+					 <div id = "dynamicInputHolder_2">
+						 <div id="dynamicInput_2">
+								<textarea rows="2" cols="50" readonly class="floating-box">Waiter shows John and Sally to their table.</textarea>
+						 </div>
+						 <input type="button" value="Add connecting sentences" onClick="addInput('dynamicInput_2', 'myInputs_2');">
+					 </div>
+					 
+					 <div id = "dynamicInputHolder_3">
+						 <div id="dynamicInput_3">
+								<textarea rows="1" cols="50" readonly class="floating-box">John asks Sally, "Will you marry me?"</textarea>
+						 </div>
+						 <input type="button" value="Add connecting sentences" onClick="addInput('dynamicInput_3', 'myInputs_3');">
+					 </div>
+				 
+				 <br>
+				 <input type="submit" value="Take me to the part 2">
+			</form>
+			<script>
+				function GenerateEmotion(){
+					var emotion = "";
+					var raw = Math.random();
+					var final = Math.ceil(raw * 2);
+					if (final == 1)
+						document.getElementById("emotion").value = "Happy";
+					else if (final == 2)
+						document.getElementById("emotion").value = "Sad";
+					else if (final == 3)
+						document.getElementById("emotion").value = "Angry";
+					else if (final == 4)
+						document.getElementById("emotion").value = "Surprise";
+				}
+			</script>
+
+		</div>
+    </div>
+
+	<div class="window">
+	
+        <div class="windowContent">
+			<p><font size="6"><b>Emotionalize it!</b></font></p>
+			<p><font size="3">We are trying to develop computer programs that can understand common emotions, so they can communicate better with human users.</font></p>
+			<p><font size="5"><b> Rules of the game </b></font></p>
+
+			<font size="3">
+			<p>Imagine you are a narrator. Today, you are narrating a story of John and Sally's wedding.</p>
+			<p>Your goal is to make your audience experience the emotion written on the left top in the yellow box.</p> 
+			<p>As narrator, your job is to tell the story of John and Sally's wedding. We have provided you with the beginning of the story as well as two events that happen later in the story. Your job is to complete the story by filling in what happens in between these events. To do this, simply click the button labeled "Add connecting sentences", which will create a text box that you can use to continue the story. </p>
+			<p>As your story will be fed to a giant computer program, please follow the instructions below:</p>
+			<ul>
+			  <li>Do NOT refresh the page</li>
+			  <li>Please write only one sentece per text box.</li>
+			  <li>Please write the events in sequence of occurance</li>
+			  <li>Please use a simple language. Do NOT use compound, complex, or conditional sentences.</li>
+			  <li>Please use past tense and active voice.</li>
+			  <li>Please use names, John and Sally, instead of pronouns where the need be.</li>
+			  <li>On average it takes 3-5 sentences in each block, but you can write more if you want to</li>
+			  <li>You can include character based events, e.g. 'A mother did something'</li>
+			  <li>Your audiance should experience the given emotion</li>
+			</ul>
+			</font>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

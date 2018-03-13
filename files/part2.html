@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta name="referrer" content="origin">
+<script>
+	var part1;
+	var part2;
+	var part3;
+	function GetSimpleStory(){
+		document.getElementById("emotion").value  = getParameterByName("emotion");
+		var part1 = getParameterByName("myInputs_1[]");
+		addInput("previousInput_1", "Input_1", "prevInputs_1", "input_1", part1);
+		var part2 = getParameterByName("myInputs_2[]");
+		addInput("previousInput_2", "Input_2", "prevInputs_2", "input_2", part2);
+		var part3 = getParameterByName("myInputs_3[]");
+		addInput("previousInput_3", "Input_3", "prevInputs_3", "input_3", part3);
+	}
+
+	function getParameterByName(name){
+		var url = decodeURIComponent(window.location.search);
+		name = name.replace(/[\[\]]/g, "\\$&");
+		var regex = new RegExp("[?&]" + name + "=([^&#]*)", 'g');
+		var match, result = [];
+		while ((match = regex.exec(url)) !== null)
+			result.push(match[1]);
+		return result;
+	}
+	
+	function getOffset( el ) {
+    var rect = el.getBoundingClientRect();
+    return {
+        left: rect.left + window.pageXOffset,
+        top: rect.top + window.pageYOffset,
+        width: rect.width || el.offsetWidth,
+        height: rect.height || el.offsetHeight
+    };
+}
+	
+	function connect(div1, div2, color, thickness) { // draw a line connecting elements
+		var off1 = getOffset(div1);
+		var off2 = getOffset(div2);
+		// bottom right
+		var x1 = 1.3*off1.left + off1.width;
+		var y1 = off1.top + off1.height;
+		// top right
+		var x2 = off2.left + off2.width/2;
+		var y2 = off2.top;
+		// distance
+		var length = Math.sqrt(((x2-x1) * (x2-x1)) + ((y2-y1) * (y2-y1)));
+		// center
+		var cx = ((x1 + x2) / 2) - (length / 2);
+		var cy = ((y1 + y2) / 2) - (thickness / 2);
+		// angle
+		var angle = 0.0;
+		// make hr
+		var htmlLine = "<div style='padding:0px; margin:0px; height:" + thickness + "px; background-color:" + color + "; line-height:1px; position:absolute; left:" + cx + "px; top:" + cy + "px; width:" + length + "px; -moz-transform:rotate(" + angle + "deg); -webkit-transform:rotate(" + angle + "deg); -o-transform:rotate(" + angle + "deg); -ms-transform:rotate(" + angle + "deg); transform:rotate(" + angle + "deg);' />";
+		//
+		// alert(htmlLine);
+		document.body.innerHTML += htmlLine;
+	}
+
+	function addInput(divName, nextDiv, arrName, nextArray, contents){
+		contents.forEach(function (value, i){
+			value = value.replace(new RegExp('\\+', 'g'), ' ');
+			var newdiv = document.createElement('div');
+			newdiv.innerHTML = "<input type='text' name='" + arrName + "[]' value='" + value + "' readonly>";
+			document.getElementById(divName).appendChild(newdiv);
+			
+			var newdiv1 = document.createElement('div');
+			newdiv1.innerHTML = "<input type='text' name='" + nextArray + "[]' value='' required>";
+			document.getElementById(nextDiv).appendChild(newdiv1);
+			
+			//connect(newdiv, newdiv1, "red", 2.0);
+		})
+	}
+
+	function guid() {
+	  document.getElementById('jsGenId').disabled = 'disabled';
+	  var id =  s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+		s4() + '-' + s4() + s4() + s4();
+	  document.getElementById('jsIdResult').value = id;
+	  document.getElementById('uniqueID').value = id;
+	}
+
+	function s4() {
+	  return Math.floor((1 + Math.random()) * 0x10000)
+		.toString(16)
+		.substring(1);
+	}
+	
+</script>
+<style>
+html *
+{
+	color: #000 !important;
+	font-family: Arial !important;
+}
+
+.wrapper
+{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	overflow:auto;
+	background-image: url("l.png");
+
+}
+
+.window
+{
+	width: 120%;
+	min-height: 200px;
+	display: flex;
+	flex-direction: column-reverse;
+	float: none;
+	align-items: center;
+	justify-content: center;
+	<!-- background-image: url("lr.png");!-->
+
+}
+
+.window_mid
+{
+	width: 120%;
+	min-height: 200px;
+	display: flex;
+	flex-direction: column-reverse;
+	float: none;
+	align-items: center;
+	justify-content: center;
+	background-image: url("lrmid.png");
+
+}
+
+
+.window_plain
+{
+	width: 120%;
+	min-height: 200px;
+	display: flex;
+	flex-direction: column-reverse;
+	float: none;
+	align-items: center;
+	justify-content: center;
+	<!--background-image: url("l.png");!-->
+
+}
+
+.windowContent
+{
+
+}
+
+.generatedEmotion
+{
+	font-weight: bold;
+	background-color: #f9f99f;
+	font-size:2.4em;
+		width: 10%;
+
+}
+
+ .generatedEmotionHidden
+ {
+ 	font-weight: bold;
+	font-size:2.4em;
+	visibility: hidden;
+	width: 100%;
+ }
+ 
+input[type=text], select {
+    width: 130%;
+    padding: 6px 10px;
+    margin: 4px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+	font-weight: bold;
+    width: 80%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=button]{
+	width: 50%;
+    background-color: #9CAFFF;
+    color: white;
+    padding: 6px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 0px;
+	float: left;
+    width: 75%;
+    margin: 5px;
+	margin-left: 0.5cm;
+}
+
+.floating-box {
+    float: left;
+    width: 100%;
+    margin: 5px;
+	margin-left: 0.5cm;
+    border: 3px solid #73AD21;
+	border-radius: 4px;
+	overflow: hidden;
+}
+</style>
+</head>
+
+<body onload="GetSimpleStory()">
+			<form method="POST" action="http://formspree.io/sga267@uky.edu">
+
+<div class="wrapper">
+    <div class="window">
+		<div class="windowContent">
+			<!--<script>
+				function getParameterByName(name){
+					var url = decodeURIComponent(window.location.search);
+					name = name.replace(/[\[\]]/g, "\\$&");
+					var regex = new RegExp("[?&]" + name + "=([^&#]*)", 'g');
+					var match, result = [];
+					while ((match = regex.exec(url)) !== null)
+						result.push(match[1]);
+					return result;
+				}
+				
+				function addInput(divName, nextDiv, arrName, nextArray, contents){
+					contents.forEach(function (value, i){
+						value = value.replace(new RegExp('\\+', 'g'), ' ');
+						var newdiv = document.createElement('div');
+						newdiv.innerHTML = "<input type='text' name='" + arrName + "[]' value='" + value + "' readonly>";
+						document.getElementById(divName).appendChild(newdiv);
+						
+						var newdiv1 = document.createElement('div');
+						newdiv1.innerHTML = "<input type='text' name='" + nextArray + "[]' value='' required>";
+						document.getElementById(nextDiv).appendChild(newdiv1);
+					})
+				}
+			</script> !-->
+			<p id="demo"></p>
+			
+				<b>Emotion</b><br>
+				<input type="text" value="" name="emotion" id="emotion" class="generatedEmotion" readonly>
+				<div id="previousInput_1">
+					<textarea rows="5" cols="50" readonly class="floating-box">
+John arrived at Sally's house to pick her up. John and Sally were going to a fancy restaurant that evening for a dinner. John was little nervous because he was going to ask Sally to marry him.</textarea>
+				 </div>
+				<div id="previousInput_2">
+				<textarea rows="2" cols="50" readonly class="floating-box">Waiter shows John and Sally to their table.</textarea>
+				</div>
+				<div id="previousInput_3">
+				<textarea rows="1" cols="50" readonly class="floating-box">John asks Sally, "Will you marry me?"</textarea>
+				 </div>
+		</div>
+    </div>
+	
+	<div class="window_mid">
+		<div class="windowContent">
+				<input type="text" value="" id="emotion1" class="generatedEmotionHidden" readonly>
+				<input type="text" value="" id="emotion2" class="generatedEmotionHidden" readonly>
+								<br><b> Interesting Version</b><br>
+				<input type="text" value="" id="emotion2" class="generatedEmotionHidden" readonly>
+
+			<div id="Input_1">
+				<textarea rows="5" cols="50" readonly class="floating-box">
+John arrived at Sally's house to pick her up. John and Sally were going to a fancy restaurant that evening for a dinner. John was little nervous because he was going to ask Sally to marry him.</textarea>
+			</div>
+			<div id="Input_2">
+				<textarea rows="2" cols="50" readonly class="floating-box">Waiter shows John and Sally to their table.</textarea>
+			</div>
+			<div id="Input_3">
+				<textarea rows="1" cols="50" readonly class="floating-box">John asks Sally, "Will you marry me?"</textarea>
+			</div>
+			<input type="button" id="jsGenId" value="Generate ID" onClick="guid();">
+			<br>
+			<input id="jsIdResult" type="text" placeholder="ID will be placed here..." readonly size="40"/>
+			<input type="hidden" name="uniqueID" id="uniqueID" value="">
+			<input type="submit" value="Both parts completed, Submit story">
+
+			<!--<script>
+				var part1;
+				var part2;
+				var part3;
+				function GetSimpleStory(){
+					document.getElementById("emotion").value  = getParameterByName("emotion");
+					var part1 = getParameterByName("myInputs_1[]");
+					addInput("previousInput_1", "Input_1", "prevInputs_1", "input_1", part1);
+					var part2 = getParameterByName("myInputs_2[]");
+					addInput("previousInput_2", "Input_2", "prevInputs_2", "input_2", part2);
+					var part3 = getParameterByName("myInputs_3[]");
+					addInput("previousInput_3", "Input_3", "prevInputs_3", "input_3", part3);
+				}
+			</script>!-->
+		</div>
+	</div>
+	
+	<div class="window_plain">
+        <div class="windowContent">
+			<p><font size="6"><b>Make it interesting!</b></font></p>
+			<p><font size="3">You have successfully completed the first half of this HIT, hurray!!</font></p>
+			<p><font size="5"><b>Now it is time to make this story sound more natural.</b></font></p>
+			<p><font size="3">It is essential that you complete this part of the HIT, otherwise you will NOT get paid, there are no partial payments.</b></font></p>
+			<p><font size="3">You need to write an "interesting" version for each sentence that you wrote earlier.</b></font></p>
+			<p><font size="3">Example:  Simple Sentence: "John prepared breakfast."
+			<p><font size="3">			Interesting Sentence: "John prepared a delicious egg sandwich for breakfast." 
+
+			<font size="3">
+			<p>Imagine you are a narrator. Today, you are narrating a story of John and Sally's wedding.</p>
+			<p>Your goal is to make your audience experience the emotion written on the left top marked in a yellow box.</p> 
+
+			<ul>
+			  <li>Please write only one sentence per text box. Now you may write complex sentences, add punctuation, etc.</li>
+			  <li>Please use past tense. </li>
+			  <li>Your audience should experience the given emotion.</li>
+			  <li>You have to write corrosponding sentences to your previous story</li>
+			  <li>The overall meaning of your sentences should not change</li>
+
+			</ul>
+			</font>
+        </div>
+    </div>
+</div>
+	</form>
+
+</body>
+
+</html>

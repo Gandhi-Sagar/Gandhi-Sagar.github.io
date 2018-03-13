@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta name="referrer" content="origin">
+<script>
+	var counter = 0;
+    var limit = 50;
+
+    function addInput(divName, arrName){
+         if (counter == limit)  {
+              alert("You have reached the limit of adding " + counter + " inputs");
+         }
+         else {
+              var newdiv = document.createElement('div');
+              newdiv.innerHTML = "<input type='text' name='" + arrName + "[]' required autofocus>";
+              document.getElementById(divName).appendChild(newdiv);
+              counter++;
+         }
+    }
+	
+</script>
+
+<style>
+	html *
+	{
+		color: #000 !important;
+		font-family: Arial !important;
+	}
+	
+ .wrapper
+    {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      overflow:auto;
+
+    }
+
+    .window
+    {
+      width: 100%;
+      min-height: 200px;
+      display: flex;
+	  flex-direction: column-reverse;
+	  float: none;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .windowContent
+    {
+
+    }
+	
+	.generatedEmotion
+	{
+     font-weight: bold;
+	 background-color: #f9f99f;
+	font-size:2.4em
+	 }
+
+input[type=text], select {
+    width: 150%;
+    padding: 6px 10px;
+    margin: 4px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 80%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=button]{
+	width: 50%;
+    background-color: #9CAFFF;
+    color: white;
+    padding: 6px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 0px;
+	float: left;
+    width: 75%;
+    margin: 5px;
+	margin-left: 0.5cm;
+}
+
+.floating-box {
+    float: left;
+    width: 100%;
+    margin: 5px;
+	margin-left: 0.5cm;
+    border: 3px solid #73AD21;  
+    border-radius: 4px;
+}
+
+
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+	<div class="window">
+	
+        <div class="windowContent">
+			<p><font size="6"><b>Instruction for part 1</b></font></p>
+			<p><font size="3">We are trying to develop computer programs that can understand common emotions, so they can communicate better with human users.</font></p>
+			<p><font size="5"><b> Rules of the game </b></font></p>
+
+			<font size="3">
+			<p>Imagine you are a narrator. Today, you are narrating a story of John and Sally's wedding.</p>
+			<p>Your goal is to make your audience experience the emotion written on the left top in the yellow box.</p> 
+			<p>As narrator, your job is to tell the story of John and Sally's wedding. We have provided you with the beginning of the story as well as two events that happen later in the story. Your job is to complete the story by filling in what happens in between these events. To do this, simply click the button labeled "Add connecting sentences", which will create a text box that you can use to continue the story. </p>
+			<p>As your story will be fed to a giant computer program, please follow the instructions below:</p>
+			<ul>
+			  <li>Do NOT refresh the page</li>
+			  <li>Please write only one sentece per text box.</li>
+			  <li>Please write the events in sequence of occurance</li>
+			  <li>Please use a simple language. Do NOT use compound, complex, or conditional sentences.</li>
+			  <li>Please use past tense and active voice.</li>
+			  <li>Please use names, John and Sally, instead of pronouns where the need be.</li>
+			  <li>On average it takes 3-5 sentences in each block, but you can write more if you want to</li>
+			  <li>You can include character based events, e.g. 'A mother did something'</li>
+			  <li>Your audiance should experience the given emotion</li>
+			</ul>
+			</font>
+			
+			<p><font size="6"><b>Instructions for part 2</b></font></p>
+			<p><font size="5"><b>In part 2, you have to make story sound more natural.</b></font></p>
+			<p><font size="3">It is essential that you complete this part of the HIT, otherwise you will NOT get paid, there are no partial payments.</b></font></p>
+			<p><font size="3">You need to write an "interesting" version for each sentence that you wrote earlier.</b></font></p>
+			<p><font size="3">Example:  Simple Sentence: "John prepared breakfast."
+			<p><font size="3">			Interesting Sentence: "John prepared a delicious egg sandwich for breakfast." 
+
+			<font size="3">
+			<p>Imagine you are a narrator. Today, you are narrating a story of John and Sally's wedding.</p>
+			<p>Your goal is to make your audience experience the emotion written on the left top marked in a yellow box.</p> 
+
+			<ul>
+			  <li>Please write only one sentence per text box. Now you may write complex sentences, add punctuation, etc.</li>
+			  <li>Please use past tense. </li>
+			  <li>Your audience should experience the given emotion.</li>
+			  <li>You need not be extremely creative and need not write extremely unlikely scenarios.</li>
+
+			</ul>
+			</font>
+			<p><font size="6"><b>Make sure you understand the instructions, they are also written on the right side of the task completion page</b></font></p>
+
+			<form action="part1.html">
+			<input type="submit" value="I have read the instructions, let us start the HIT">
+			</form>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
