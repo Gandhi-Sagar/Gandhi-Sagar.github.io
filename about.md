@@ -110,7 +110,9 @@ function resizeCanvas()
 
 <br>
 
-Currently I am based in ~~Pune, India~~ Lexington, KY, USA.
+### Present
+
+I am based in ~~Pune, India~~ Lexington, KY, USA.
 
 I am a graduate student at the University of Kentucky, USA.
 
@@ -118,10 +120,10 @@ I am a graduate student at the University of Kentucky, USA.
 
 I have worked at [Persistent LABS](http://www.persistent.com/) as Senior Software Engineer. I was mostly involved in [Computer Vision](https://en.wikipedia.org/wiki/Computer_vision) and [Machine Learning](https://en.wikipedia.org/wiki/Machine_learning) work, solving real world problems in real time.
 
-### In my spare time:
-
-I have worked on Computer Graphics. You can find references some cool demos on [projects](http://www.sagargandhi.com/projects/) page. I have also consulted multiple start ups in articulating development pipeline.  
+Independently, I have worked on Computer Graphics. You can find references some cool demos on [projects](http://www.sagargandhi.com/projects/) page. I have also consulted multiple start ups in articulating development pipeline.  
 
 I have a Masters degree in Scientific Computing from [Interdesciplinary School of Scientific Computing](http://issc.unipune.ac.in/).  
-  
+
+### Future
+
 I am interested in working with smart people, using cutting edge technology, and solving real life problems. So feel free to get in touch at gandhi.sagar.gs@gmail.com  
