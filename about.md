@@ -10,7 +10,7 @@ permalink: /about/
 width:100%;height:100%;color:white;font-size:18px;">
 -->
 
-##Hello!  
+## Hello!  
   
 I am Sagar Gandhi.
 <h1 style = "text-align: center;" markdown = "1">I</h1>  
@@ -61,22 +61,22 @@ function redraw(width, height)
 
   ctx.beginPath();
   
-  var punch_1 = "LEARN"
+  var punch_1 = "MENTOR"
   ctx.moveTo(start - margin, 0);
   ctx.bezierCurveTo((start - height/3), 0 , (start - height/3), height , end_step*1, height);
   ctx.fillText(punch_1, (end_step*1) - (width*0.05), (height+3*margin))
 
-  var punch_5 = "MENTOR"
+  var punch_5 = "   TEACH"
   ctx.moveTo(start + margin, 0);
   ctx.bezierCurveTo((start + height/3), 0 , (start + height/3), height , end_step*3, height);
   ctx.fillText(punch_5, (end_step*3) - (width*0.05), (height+3*margin))
 
-  var punch_2 = "RESEARCH"
+  var punch_2 = "LEARN"
   ctx.moveTo(start - margin, 0);
   ctx.bezierCurveTo((start - height*0.33), 0 , (start - height*0.16), height , end_step*1.5, height);
   ctx.fillText(punch_2, (end_step*1.5) - (width*0.05), (height+3*margin))
 
-  var punch_4 = "TEACH"
+  var punch_4 = "RESEARCH"
   ctx.moveTo(start + margin, 0);
   ctx.bezierCurveTo((start + height*0.33), 0 , (start + height*0.16), height , end_step*2.5, height);
   ctx.fillText(punch_4, (end_step*2.5) - (width*0.05), (height+3*margin))
@@ -110,17 +110,18 @@ function resizeCanvas()
 
 <br>
 
-Currently I am based in Pune, India.  
-I work at [Persistent LABS](http://www.persistent.com/) as Senior Software Engineer. I am mostly involved in [Computer Vision](https://en.wikipedia.org/wiki/Computer_vision) and [Machine Learning](https://en.wikipedia.org/wiki/Machine_learning) work, solving real world problems in real time.
-  
-##Past  
-  
-I have worked on Computer Graphics. You can find references some cool demos on projects page. I have also consulted multiple start ups in articulating development pipeline.  
-I also hold a MS degree in Scientific Computing from [Interdesciplinary School of Scientific Computing](http://issc.unipune.ac.in/).  
+Currently I am based in ~~Pune, India~~ Lexington, KY, USA.
+
+I am a graduate student at the University of Kentucky, USA.
+
+### Past
+
+I have worked at [Persistent LABS](http://www.persistent.com/) as Senior Software Engineer. I was mostly involved in [Computer Vision](https://en.wikipedia.org/wiki/Computer_vision) and [Machine Learning](https://en.wikipedia.org/wiki/Machine_learning) work, solving real world problems in real time.
+
+### In my spare time:
+
+I have worked on Computer Graphics. You can find references some cool demos on [projects](http://www.sagargandhi.com/projects/) page. I have also consulted multiple start ups in articulating development pipeline.  
+
+I have a Masters degree in Scientific Computing from [Interdesciplinary School of Scientific Computing](http://issc.unipune.ac.in/).  
   
 I am interested in working with smart people, using cutting edge technology, and solving real life problems. So feel free to get in touch at gandhi.sagar.gs@gmail.com  
-  
-
-
-
-
