@@ -6,8 +6,9 @@ permalink: /How-to-Install-OpenGL
 categories:
   - Posts
 ---
-<!--excerpt.start-->This guide will help you installing OpenGL. I am only targetting fixed-function pipeline, i.e., we won't test programmable pipeline's functionality after installation.  
-Programmable pipeline is subject to your hardware and device drivers which in turn determine which OpenGL version is supported. If you do not know what I am talking about - look [here](https://en.wikipedia.org/wiki/Graphics_pipeline)  
+<!--excerpt.start-->This guide will help you installing OpenGL. I am only targetting fixed-function pipeline, i.e., we won't test programmable pipeline's functionality after installation.
+After the installation, if you use my linked code to test the program, you will see output like below.
+<center><img src="/images/glut_test_output.jpg"></center>
   
 Let us get started.
 
