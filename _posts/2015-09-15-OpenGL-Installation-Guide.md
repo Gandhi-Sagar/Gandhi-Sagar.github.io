@@ -63,7 +63,7 @@ These instructions are for using g++. Here is the birds eye view of steps involv
 Here are the detailed istructions. 
 
 + Install MinGW
-  - Download an executable - [mingw-get-setup.exe](https://github.com/Gandhi-Sagar/OpenGL_Installation/blob/master/mingw-get-setup.exe) and execute it.  
+  - Download an executable - [mingw-get-setup.exe](https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe) and execute it.  
   *Note: You need active internet connection*
   - If you are willing the change the installation location, do so, but make sure your location contains NO SPACES.  
   *For e.g. "My Documents" is a BAD location*
@@ -82,7 +82,7 @@ Here are the detailed istructions.
     - Close MinGW installer, and you are done.
 
 + Install freeglut
-  - Download the package: [freeglut-MinGW-3.0.0-1.mp.zip](https://github.com/Gandhi-Sagar/OpenGL_Installation/blob/master/freeglut-MinGW-3.0.0-1.mp.zip)
+  - Download the package: [freeglut-MinGW-3.0.0-1.mp.zip](https://www.transmissionzero.co.uk/files/software/development/GLUT/freeglut-MinGW.zip)
   - Copy this compressed file to "\<MinGW-installation-directory\>"
   - Extract the folder at the same location.
   - You should see a new freeglut folder containing bin, include and lib subfolders and couple of other files.
@@ -93,7 +93,7 @@ Note: As we have already added MinGW's binaries' path to path variable, putting 
 + Write an OpenGL program
   - Well, you can find it [here](https://github.com/Gandhi-Sagar/OpenGL_Installation/blob/master/opengl_glut_setup_test.cpp). Copy-paste or type - you decide.
 
-+ Build and run the executable
++ Build and run the executable - 32 bit
   - Execute the following command:
 `g++ <filename.cpp> -o <output_file.exe> -I"<MinGW-installation-directory>\freeglut\include" -lopengl32 -L"<MinGW-installation-directory>\freeglut\lib" -lfreeglut
 `
@@ -105,11 +105,7 @@ Note: As we have already added MinGW's binaries' path to path variable, putting 
   
   - Run the executable you just created and you should be good to go.
       
-      
-**Note: By default your executable is 32bit. If you are interested you can add -m64 switch, and in that case, you will have to link 64bit version of freeglut, and also you need to copy 64bit dll in step (2.v).**
-
-
-
-
-
-
++ Build and run the executable - 64 bit
+  - Everything as above, just link to the 64 bit library, and in order to run correctly, you must have copied 64 bit dll to MinGW's bin directory.
+  - Example on my machine:
+`C:\Users\Sagar Gandhi\Videos>g++ opengl_glut_setup_test.cpp -o opengl_glut_setup_test.exe -I"F:\Installations\MinGW\freeglut\include" -lopengl32 -L"F:\Installations\MinGW\freeglut\lib\x64" -lfreeglut`
