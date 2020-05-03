@@ -8,7 +8,7 @@ categories:
 ---
 <!--excerpt.start-->This guide will help you installing OpenGL. I am only targetting fixed-function pipeline, i.e., we won't test programmable pipeline's functionality after installation.
 After the installation, if you use my linked code to test the program, you will see output like below.
-<center><img src="/images/glut_test_output.jpg"></center>
+<center><img src="/images/glut_sample_output.jpg"></center>
   
 Let us get started.
 
