@@ -8,8 +8,6 @@ Publications
 -------------
 - **Preprints**
 
-  - <a href="http://arxiv.org/pdf/1608.05513.pdf">Deshmukh, Shraddha, Sagar Gandhi, Pratap Sanap, and Vivek Kulkarni. "Data Centroid Based Multi-Level Fuzzy Min-Max Neural Network." arXiv preprint arXiv:1608.05513 (2016).
-
 - **Other**
 
   - <a href="#">Automated Monitoring of Power lines in Real Time</a>
